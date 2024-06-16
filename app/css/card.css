@@ -1,14 +1,6 @@
-.container {
+*{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.card {
+    text-align: center;
     margin: 10px;
-}
-
-.card-img-top {
-    max-width: 100%;
-    height: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
