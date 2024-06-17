@@ -1,4 +1,6 @@
 <?php
+require './config.php';
+
 // Diretório onde o arquivo será salvo
 $target_dir = "./uploads/";
 
@@ -31,7 +33,7 @@ if (isset($_FILES["file"]) && $_FILES["file"]["error"] === UPLOAD_ERR_OK) {
         // Tenta mover o arquivo para o diretório de destino
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
             // Obtém a descrição do campo de formulário
-            $description = htmlspecialchars($_POST["description"]);
+            $description = isset($_POST["description"]) ? htmlspecialchars($_POST["description"]) : '';
 
             // Salva a descrição em um arquivo .txt
             $description_file = $target_dir . pathinfo($target_file, PATHINFO_FILENAME) . ".txt";
