@@ -1,5 +1,4 @@
 <?php
-require './config.php';
 
 // Diretório onde o arquivo será salvo
 $target_dir = "./uploads/";
@@ -50,7 +49,7 @@ if (isset($_FILES["file"]) && $_FILES["file"]["error"] === UPLOAD_ERR_OK) {
         $response["message"] = "Desculpe, apenas arquivos JPG, JPEG, MP4, AVI, e MOV são permitidos.";
     }
 } else {
-    $response["message"] = "Desculpe, ocorreu um erro no envio do arquivo.";
+    $response["message"] = "Vídeo ou imagem excede 2Mb.";
 }
 
 // Retorna a resposta como JSON
